@@ -11,8 +11,8 @@ public class CandlestickFactory {
 //		double maximo = negociacoes.get(0).getPreco();
 //		double minimo = negociacoes.get(0).getPreco();
 		
-		double maximo = Double.MIN_VALUE;
-		double minimo = Double.MAX_VALUE;
+		double maximo = negociacoes.isEmpty() ? 0 : Double.MIN_VALUE;
+		double minimo = negociacoes.isEmpty() ? 0 : Double.MAX_VALUE;
 		
 		
 		double volume = 0;
@@ -30,6 +30,8 @@ public class CandlestickFactory {
 		double abertura = negociacoes.isEmpty() ? 0 : negociacoes.get(0).getPreco();
 		double fechamento = negociacoes.isEmpty() ? 0 : negociacoes.get(negociacoes.size() - 1).getPreco();
 
+		
+		
 		return new Candlestick(abertura, fechamento, minimo, maximo, volume,
 				data);
 
