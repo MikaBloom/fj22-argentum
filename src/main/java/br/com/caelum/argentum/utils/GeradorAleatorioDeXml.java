@@ -35,7 +35,7 @@ public class GeradorAleatorioDeXml {
 				}
 				
 				// Quantidade entre 500 e 1500
-				quantidade += 1000 - random.nextInt(500);
+				quantidade = 500 + random.nextInt(1000);
 			
 				Negociacao n = new Negociacao(valor, quantidade, data);
 				negociacoes.add(n);
