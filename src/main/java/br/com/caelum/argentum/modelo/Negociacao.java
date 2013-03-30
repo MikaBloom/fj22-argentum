@@ -26,11 +26,17 @@ public final class Negociacao {
 
 	public Calendar getData() {
 		// return this.data;
-		return (Calendar) this.data.clone();
+		return (Calendar) this.data.clone(); // sure the data is immutable 
 	}
 	
 	public double getVolume(){
 		return quantidade * preco;
+	}
+
+	public boolean isMesmoDia(Calendar outraData) {
+		return 	data.get(Calendar.DATE) == outraData.get(Calendar.DATE) &&
+				data.get(Calendar.MONTH) == outraData.get(Calendar.MONTH) &&
+				data.get(Calendar.YEAR) == outraData.get(Calendar.YEAR) ;
 	}
 	
 }
